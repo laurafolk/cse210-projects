@@ -1,6 +1,6 @@
 # cse210-student-template
 
-Laura Folk - 09/11/23.
+Laura Folk - 09/11/23
 
 This is the starter code for students in CSE 210.
 
