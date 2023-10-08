@@ -14,6 +14,8 @@ class Program //A "class" is just a template and becomes useful when an instance
                 "2.  Display the journal entry",
                 "3.  Save the journal entry to a file.",
                 "4.  Load the journal entry from a file.",
+                //Trying to add to display all entries for a certian date.
+                //"5.  Display all entries on a certian date.",
                 "5.  Quit",
                 "What would you like to do? "
             };
