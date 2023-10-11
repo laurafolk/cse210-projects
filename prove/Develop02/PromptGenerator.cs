@@ -4,7 +4,7 @@ using System.IO;
 class PromptGenerator
 {
     List<string> prompts;
-    
+
     public PromptGenerator()  //The responsibility is to hold and display question prompts.
     {
         prompts = new List<string>

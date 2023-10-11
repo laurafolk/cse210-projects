@@ -13,23 +13,23 @@ class Journal
     }
 
     public void WriteJournalEntries()
-{
-    Console.WriteLine("Enter the date (e.g. October 03, 2023): ");
-    string date = Console.ReadLine();
+    {
+        Console.WriteLine("Enter the date (e.g. October 03, 2023): ");
+        string date = Console.ReadLine();
 
-    Console.WriteLine("Choose a prompt: ");
-    //PromptGenerator promptGenerator = new PromptGenerator();
-    string prompt = promptGenerator.GetRandomPrompt();
-    Console.WriteLine(prompt);
+        Console.WriteLine("Choose a prompt: ");
+        //PromptGenerator promptGenerator = new PromptGenerator();
+        string prompt = promptGenerator.GetRandomPrompt();
+        Console.WriteLine(prompt);
 
-    Console.WriteLine("Enter your response: ");
-    string response = Console.ReadLine();
-        
-    Entry entry = new Entry(date, prompt, response);
-    entries.Add(entry);
+        Console.WriteLine("Enter your response: ");
+        string response = Console.ReadLine();
 
-    Console.WriteLine("Entry added successfully. ");
-}
+        Entry entry = new Entry(date, prompt, response);
+        entries.Add(entry);
+
+        Console.WriteLine("Entry added successfully. ");
+    }
     public void DisplayJournalEntries()
     {
         foreach (Entry entry in entries)
@@ -44,11 +44,11 @@ class Journal
         {
             records.Add(entry.GetEntryAsCSV());
         }
-            //File.WriteAllLines(fileName, records);
-            Console.WriteLine("Name of the file you wnat to save? ");
-            //string _fileName = Console.ReadLine();
+        //File.WriteAllLines(fileName, records);
+        Console.WriteLine("Name of the file you wnat to save? ");
+        //string _fileName = Console.ReadLine();
 
-            File.WriteAllLines(fileName, records);
+        File.WriteAllLines(fileName, records);
     }
     public void LoadFromCSV(string fileName)
     {

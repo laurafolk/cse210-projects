@@ -19,5 +19,5 @@ class Entry
     {
         return string.Format("{0} | {1} | {2}", date, prompt, response);
     }
-   
+
 }

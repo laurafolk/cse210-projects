@@ -21,7 +21,7 @@ class Program //A "class" is just a template and becomes useful when an instance
             };
         while (menuUserinput != 5) //The program will continue to run until 5 is entered to quit.
         {
-            foreach(string menueItem in menu)
+            foreach (string menueItem in menu)
             {
                 //string date = DateTime.Now.ToString("MM/dd/yyyy");
                 Console.WriteLine(menueItem);
