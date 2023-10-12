@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
+//using System.IO;
 class PromptGenerator
 {
-    List<string> prompts;
+    private List<string> prompts;
+    private Random random;
 
     public PromptGenerator()  //The responsibility is to hold and display question prompts.
     {
@@ -19,8 +20,8 @@ class PromptGenerator
     }
     public string GetRandomPrompt()  // This is the function also called the method (or behavior).
     {
-        Random random = new Random();
-        int index = random.Next(0, 6);
+        //Random random = new Random();
+        int index = random.Next(0, prompts.Count);
         return prompts[index];
     }
 }
