@@ -1,5 +1,6 @@
 using System;
-
+using System.Collections.Generic;
+using System.IO;
 class Entry
 {
     string date, prompt, response;
@@ -17,7 +18,7 @@ class Entry
     }
     public string GetEntryAsCSV()
     {
-        return string.Format("{0} | {1} | {2}", date, prompt, response);
+        return $"{date} | {prompt} | {response}";
     }
 
 }

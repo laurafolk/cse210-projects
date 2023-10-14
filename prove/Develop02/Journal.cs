@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-
 class Journal
 {
     List<Entry> entries; // Will hold the Journal entries made by the user.
@@ -14,8 +12,9 @@ class Journal
 
     public void WriteJournalEntries()
     {
-        Console.WriteLine("Enter the date (e.g. October 03, 2023): ");
-        string date = Console.ReadLine();
+        string date = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
+        //Console.WriteLine("Enter the date (e.g. October 03, 2023): ");
+        //string date = Console.ReadLine();
 
         Console.WriteLine("Choose a prompt: ");
         //PromptGenerator promptGenerator = new PromptGenerator();
@@ -44,15 +43,13 @@ class Journal
         {
             records.Add(entry.GetEntryAsCSV());
         }
-        //File.WriteAllLines(fileName, records);
-        Console.WriteLine("Name of the file you wnat to save? ");
-        //string _fileName = Console.ReadLine();
-
         File.WriteAllLines(fileName, records);
+        Console.WriteLine($"Journal succeffsully saved to {fileName}.");
+        //Console.WriteLine("Name of the file you wnat to save? ");
     }
     public void LoadFromCSV(string fileName)
     {
-        Console.WriteLine("Name of file to load? ");
+        Console.WriteLine("Name of file to load?");
         string _fileName = Console.ReadLine();
         entries.Clear(); //Add this line to clear existing entries before loading from the file.
 

@@ -1,6 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.IO;
+
 class PromptGenerator
 {
     private List<string> prompts;
@@ -17,10 +16,11 @@ class PromptGenerator
             "How did you help someone today? ",
             "What was a chalenge that I faced today and how did I overcome it? ",
         };
+
+        random = new Random();
     }
     public string GetRandomPrompt()  // This is the function also called the method (or behavior).
     {
-        //Random random = new Random();
         int index = random.Next(0, prompts.Count);
         return prompts[index];
     }
