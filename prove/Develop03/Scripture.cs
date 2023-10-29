@@ -1,16 +1,32 @@
 using System;
 using System.Collections.Generic;
+using System.Linq; //This imports System.Linq namespace for LINQ operations.
+using System.IO; //This imports System.IO for file operations.
 
 class Scripture
 {
-    private Reference Reference { get; }
-    private List<Word> Words { get; }
+    public Reference Reference { get; }
+    public List<Word> Words { get; }
 
     public Scripture(Reference reference, string text)
     {
         // Constructor: Initializes the scripture with its reference and text.
         Reference = reference;
         Words = text.Split(' ').Select(word => new Word(word)).ToList();
+    }
+
+    public void HideWords()
+    {
+        foreach (Word word in Words)
+        {
+            if (!word.Hidden)
+            {
+                // Replace the word with dashes of the same length
+                string dashes = new string('_', word.Text.Length);
+                //word.Text = dashes;
+                //word.Hide();
+            }
+        }
     }
 
     public void RevealWords()
@@ -29,21 +45,15 @@ class Scripture
 
         foreach (Word word in Words)
         {
-            if (word.Hidden)
-            {
-                Console.Write("________ ");
-            }
-            else
-            {
-                Console.Write(word.Text + " ");
-            }
+            // The GetDisplayText method of the word class to display the
+            string displayText = word.GetWord();
+            Console.Write($"{displayText} ");
         }
         Console.WriteLine();
     }
 
     public bool IsFullyHidden()
     {
-        // Method: Check if all words in the scripture are hidden.
         return Words.All(word => word.Hidden);
     }
 }
