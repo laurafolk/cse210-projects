@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq; //This imports System.Linq namespace for LINQ operations.
 using System.IO; //This imports System.IO for file operations.
-class Reference
+public class Reference
 {
     public string book, chapter, verseStart, verseEnd;
 

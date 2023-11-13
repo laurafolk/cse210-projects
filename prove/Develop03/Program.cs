@@ -5,18 +5,18 @@ using System.IO; //This imports System.IO for file operations.
 
 class Program
 {
-    static void Main()//(string[] args)
+    static void Main(string[] args)
     {
         Console.WriteLine("Welcome to the Scripture Memorizer!");
         // Below will Load scriptures from the "scriptures.txt" file and create a progress manager.
         List<Scripture> library = LoadScriptures("Scripture.txt");
         //ProgressManager progressManager = new ProgressManager();
 
-        if (library.Count == 0)
-        {
-            Console.WriteLine("There are no scriptures found.  Please add scriptures to the file.");
-            return;
-        }
+        //if (library.Count == 0)
+        //{
+        //    Console.WriteLine("There are no scriptures found.  Please add scriptures to the file.");
+        //    return;
+        //}
 
         ProgressManager progressManager = new ProgressManager();
 
